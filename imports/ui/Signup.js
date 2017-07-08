@@ -27,10 +27,6 @@ onSubmit(e){
       this.setState({error: ''});
     }
   });
-
-  // this.setState({
-  //   error: "Something went wrong."
-  // });
 }
 
   render() {

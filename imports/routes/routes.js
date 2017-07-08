@@ -8,7 +8,9 @@ import  Signup  from '../ui/Signup';
 import  Dashboard  from '../ui/Dashboard';
 import  NotFound  from '../ui/NotFound';
 
-//window.browserHistory = browserHistory;
+import  WorshipTeamPanel  from '../ui/WorshipTeamPanel/WorshipTeamPanel';
+import  ServiceRundown  from '../ui/WorshipTeamPanel/WorshipTeamPanel';
+
 
 const onEnterNotePage = (nextState) => {
   Session.set('selectedNoteId', nextState.params.id);
@@ -38,9 +40,11 @@ export const routes = (
   <Router history={browserHistory}>
     <Route onEnter={globalOnEnter} onChange={globalOnChange}>
       <Route path="/" component={Login} privacy="unauth" />
-      <Route path="/signup" component={Signup} privacy="unauth" />
+      <Route path="/Signup" component={Signup} privacy="unauth" />
       <Route path="/Dashboard" component={Dashboard} privacy="auth" />
       <Route path="/Dashboard/:id" component={Dashboard} privacy="auth" onEnter={onEnterNotePage} onLeave={onLeaveNotePage}/>
+      <Route path="/WorshipTeamPanel" component={Dashboard} privacy="auth" />
+      <Route path="/ServiceRundown" component={ServiceRundown} privacy="auth" />
       <Route path="*" component={NotFound}/>
     </Route>
   </Router>
